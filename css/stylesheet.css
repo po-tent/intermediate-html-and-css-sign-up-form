@@ -1,0 +1,393 @@
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │ my name is gRoot                                                            │
+  └─────────────────────────────────────────────────────────────────────────────┘
+ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    background-attachment: initial !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+    transition-delay: 0s !important;
+  }
+} 
+
+@font-face {
+  font-family: 'getSchwifty';
+  src: url(../fonts/getSchwifty.woff2);
+}
+
+@font-face {
+  font-family: 'gosha';
+  src: url(../fonts/GoshaSansRegular.otf);
+}
+
+@keyframes rgb-pulse-h1 {
+  from {
+    filter: drop-shadow(0px 0px 3px chartreuse);
+  }
+  to {
+    filter: drop-shadow(0px 0px 5px rgb(1, 150, 1));
+  }
+}
+
+@keyframes rgb-pulse {
+  from {
+    filter: drop-shadow(0px 0px 2px red);
+  }
+
+  20% {
+    filter: drop-shadow(0px 0px 5px green);
+  }
+
+  40% {
+    filter: drop-shadow(0px 0px 2px pink);
+  }
+
+  60% {
+    filter: drop-shadow(0px 0px 5px blue);
+  }
+
+  to {
+    filter: drop-shadow(0px 0px 2px orange);
+  }
+}
+
+@keyframes border-right {
+  from {
+    border-right: 1px solid chartreuse;
+  }
+  to {
+    border-right: 3px solid chartreuse;
+  } 
+}
+
+*, 
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Gosha', Arial, Helvetica, sans-serif;
+  font-size: 1.8rem;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────────┐
+  │ layout                                                                      │
+  └─────────────────────────────────────────────────────────────────────────────┘
+ */
+
+.container-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: url('../imgs/upsetMorty.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 35%;
+  
+  animation: border-right 200ms linear infinite alternate;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  filter: drop-shadow(0 0 30px black);
+
+  background: url('../imgs/portal.png');
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 300px;
+  margin-top: 3vh;
+
+  transition: all 1s ease-out;
+}
+
+.title-container:hover {
+  transform: rotate(720deg);
+}
+
+.title-container > img {
+  height: 100px;
+}
+
+.title-container > h1 {
+  /* height: 150px; */
+  color: white;
+  font-family: 'getSchwifty', 'Courier New', Courier, monospace;
+  color: black;
+  filter: drop-shadow(0 0 3px chartreuse);
+  font-size: 7rem;
+  margin: 18px 0 0 0;
+
+  animation: rgb-pulse-h1 200ms linear infinite alternate;
+}
+
+.container-left > p {
+  color: black;
+  font-size: 1.3rem;
+  text-align: center;
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+
+.container-left a {
+  color: black;
+}
+
+.container-left a:hover {
+  color: red;
+}
+
+.container-right {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 65%;
+}
+
+.p-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  background-color: rgb(1, 150, 1);
+  height: 30vh;
+  padding: 0 50px;
+}
+
+.p-container h1 {
+  color: #fffce8;
+  font-family: 'getSchwifty', 'Courier New', Courier, monospace;
+  font-size: 8rem;
+  margin: 0 0 20px 0;
+  text-shadow: 0 0 10px #fffce8;
+
+  filter: drop-shadow(0 0 30px black);
+
+}
+
+.p-container p {
+  color: #fffce8;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.mid-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 33px;
+  
+  background-color: #fffce8;
+  height: 50vh;
+  padding: 0 50px;
+}
+
+.mid-container h3 {
+  font-size: 5rem;
+  margin: 0;
+  animation: rgb-pulse 500ms linear infinite alternate;
+}
+
+#sign-up {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-x: scroll;
+}
+
+#sign-up label {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: hsla(220, 45%, 17%, 0.861);
+}
+
+#sign-up input {
+  border: 2.5px solid #E5E7EB;
+
+  border-radius: 8px;
+  padding: 12px;
+  height: 25px;
+  width: 200px;
+
+  position: relative;
+}
+
+#sign-up input:focus {
+  border: 1px solid green;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.71);
+  outline: none;
+}
+
+#sign-up input:invalid:focus {
+  border: 1px solid red;
+
+}
+
+.top-form {
+  display: flex;
+  gap: 100px;
+}
+
+.mid-form {
+  display: flex;
+  gap: 100px;
+}
+
+.bottom-form {
+  display: flex;
+  gap: 100px;
+}
+
+.input-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: rgb(1, 150, 1);
+  height: 20vh;
+  padding: 0 50px;
+}
+
+.button-transform {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  width: 300px;
+
+  transition: all 300ms ease-out;
+}
+
+.button-transform:hover {
+  transform: rotate(360deg); 
+  margin-bottom: 30px;
+}
+
+.button-container button {
+  background-color: rgb(119, 255, 0);
+  border: 3px solid forestgreen;
+  border-radius: 8px;
+  box-shadow: 2px 2px hsla(0, 0%, 50%, 0.285);
+  color: black;
+  font-family: 'getSchwifty';
+  font-size: 1.8rem;
+  margin: 30px 0 20px 0;
+  padding: 12px 30px;
+
+  transition: all 0.3s ease-out;
+}
+
+.button-container button:hover {
+  color: #fffce8;
+  background-color: hsla(0, 0%, 0%, 0.5);
+  padding: 8px 10px;
+
+  transform: scale(1.3);
+}
+
+.button-container button:active {
+  transform: translateY(1px);
+}
+
+.button-container a {
+  color: chartreuse;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button-container a:hover {
+  color: red;
+  text-decoration: underline red;
+}
+
+.button-container p {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 0 20px 0;
+}
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ validationSh*t                                                          │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
+
+#pass_requirements {
+  color: hsl(0, 0%, 50%);
+  font-size: 1.1rem;
+  max-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+  width: 200px; 
+  /* same width as inputs */
+}
+
+#password:invalid ~ #pass_requirements {
+  max-height: max-content;
+  opacity: 1;
+} 
+
+#pass_match {
+  color: #C13838;
+  font-size: 1.2rem;
+  padding: 0 10px;
+}
+
+.displayBadge {
+    font-size: 1.1rem;
+    color: #fffce8;
+    margin: 0 0 0 8px; 
+    opacity: 0.7;
+    display: none; 
+    text-align: center;
+    padding: 3px 3px;
+    border-radius: 5px;
+    width: max-content;
+}
+
+input[type="password"]:focus ~ .displayBadge {
+  transform: scale(1.1);
+  margin-top: 5px ;
+}
+
+input[type="password"] ~ p {
+  margin: 0;
+}
+
+input[type="password"]:focus ~ p {
+  margin-top: 3px;
+}
